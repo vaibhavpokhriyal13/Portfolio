@@ -128,9 +128,9 @@ export const ContactSection = () => {
 
             <div className="pt-6 text-center md:text-left">
               <a
-                href="/resume.pdf"
+                href="/Vaibhav_Pokhriyal.pdf"
                 download
-                className="px-6 py-2.5 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 inline-flex items-center gap-2 font-medium text-sm"
+                className="cosmic-button inline-flex items-center gap-2 hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 Download Resume
               </a>
