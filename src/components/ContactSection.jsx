@@ -62,9 +62,8 @@ export const ContactSection = () => {
     <section
       id="contact"
       ref={revealRef}
-      className={`py-24 px-4 relative bg-secondary/30 transition-all duration-1000 transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
+      className={`py-24 px-4 relative bg-secondary/30 transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+        }`}
     >
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
@@ -121,7 +120,7 @@ export const ContactSection = () => {
                 <a href="https://github.com/vaibhavpokhriyal13" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Github size={24} />
                 </a>
-                <a href="https://linkedin.com/in/vaibhav-pokhriyal" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/vaibhavpokhriyal/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors">
                   <Linkedin size={24} />
                 </a>
               </div>
