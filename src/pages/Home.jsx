@@ -8,6 +8,7 @@ import { ExperienceSection } from "../components/ExperienceSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
+import { ScrollToTop } from "../components/ScrollToTop";
 
 export const Home = () => {
   return (
@@ -31,6 +32,9 @@ export const Home = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Scroll to Top button */}
+      <ScrollToTop />
     </div>
   );
 };
