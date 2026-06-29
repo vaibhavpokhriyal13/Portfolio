@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Text Gradient -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+
+  <!-- "VP" Text with transparent background -->
+  <text x="256" y="265" 
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+        font-weight="900" 
+        font-size="350" 
+        fill="url(#primaryGrad)" 
+        text-anchor="middle" 
+        dominant-baseline="middle"
+        letter-spacing="-20"
+        transform="skewX(-6)">VP</text>
+</svg>
