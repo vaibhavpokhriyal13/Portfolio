@@ -38,11 +38,6 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Futuristic bouncing scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-muted-foreground/50 text-xs tracking-widest animate-bounce pointer-events-none select-none">
-        <span className="font-semibold uppercase text-[9px]">Scroll Down</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-80"><path d="m6 9 6 6 6-6"/></svg>
-      </div>
     </section>
   );
 };
