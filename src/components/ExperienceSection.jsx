@@ -64,6 +64,9 @@ export const ExperienceSection = () => {
                   <p className="text-primary font-medium text-sm mt-1">
                     Computer Science Engineering (Data Science)
                   </p>
+                  <p className="text-muted-foreground font-medium text-xs mt-1">
+                    Maharaja Agrasen Institute of Technology (MAIT), Delhi
+                  </p>
                   <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
                     Pursuing studies specialized in Data Science. Integrating full stack software development principles with Artificial Intelligence, Machine Learning techniques, Data Structures, and algorithms to construct comprehensive digital applications.
                   </p>
