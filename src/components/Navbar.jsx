@@ -14,20 +14,42 @@ const navItems = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      const currentScrollY = window.scrollY;
+
+      // Fix coordinate logic to toggle scrolled styles
+      if (currentScrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      // Hide navbar when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100 && !isMenuOpen) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY, isMenuOpen]);
+
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+        "fixed w-full z-40 transition-all duration-300 transform",
+        isScrolled 
+          ? "py-3 bg-background/95 backdrop-blur-md shadow-md border-b border-border/20" 
+          : "py-5 bg-transparent",
+        isVisible ? "translate-y-0" : "-translate-y-full"
       )}
     >
       <div className="container flex items-center justify-between">
