@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ChevronDown } from "lucide-react";
 
 const skills = [
   // Programming Languages
@@ -49,7 +50,6 @@ const skills = [
 ];
 
 const categories = [
-  { id: "all", label: "All" },
   { id: "languages", label: "Languages" },
   { id: "frontend", label: "Frontend" },
   { id: "backend", label: "Backend" },
@@ -60,12 +60,12 @@ const categories = [
 ];
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState(null);
   const [revealRef, isVisible] = useScrollReveal({ triggerOnce: true });
 
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
+  const toggleCategory = (categoryId) => {
+    setActiveCategory((prev) => (prev === categoryId ? null : categoryId));
+  };
 
   return (
     <section
@@ -79,39 +79,63 @@ export const SkillsSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Technical <span className="text-primary">Toolkit</span>
         </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {categories.map((category) => {
+            const isExpanded = activeCategory === category.id;
+            const filtered = skills.filter((s) => s.category === category.id);
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize text-sm font-medium",
-                activeCategory === category.id
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bg-secondary"
-              )}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
+            return (
+              <div
+                key={category.id}
+                className={cn(
+                  "bg-card rounded-xl border border-border/40 overflow-hidden transition-all duration-300 shadow-xs h-fit",
+                  isExpanded ? "ring-1 ring-primary/30 border-primary/30 shadow-md" : "hover:border-primary/30"
+                )}
+              >
+                {/* Category Header */}
+                <button
+                  onClick={() => toggleCategory(category.id)}
+                  className="w-full px-6 py-4 flex items-center justify-between text-left font-semibold text-foreground hover:bg-secondary/20 transition-colors cursor-pointer"
+                >
+                  <div className="flex flex-col">
+                    <span className="text-base md:text-lg">{category.label}</span>
+                    <span className="text-xs font-normal text-muted-foreground mt-0.5">
+                      {filtered.length} skills
+                    </span>
+                  </div>
+                  <ChevronDown
+                    className={cn(
+                      "h-5 w-5 text-muted-foreground transition-transform duration-300",
+                      isExpanded && "rotate-180 text-primary"
+                    )}
+                  />
+                </button>
 
-        <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-          {filteredSkills.map((skill, index) => (
-            <div
-              key={`${activeCategory}-${skill.name}`}
-              className={cn(
-                "bg-card px-5 py-2.5 rounded-full shadow-xs border border-border/40 flex items-center justify-center transition-all duration-500 hover:border-primary/50 hover:scale-105 hover:shadow-md transform",
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              )}
-              style={{ transitionDelay: `${index * 25}ms` }}
-            >
-              <span className="font-semibold text-sm sm:text-base text-foreground">
-                {skill.name}
-              </span>
-            </div>
-          ))}
+                {/* Collapsible Content */}
+                <div
+                  className={cn(
+                    "transition-all duration-300 ease-in-out overflow-hidden",
+                    isExpanded ? "max-h-[500px] border-t border-border/30 opacity-100" : "max-h-0 opacity-0"
+                  )}
+                >
+                  <div className="p-5 flex flex-wrap gap-2">
+                    {filtered.map((skill, index) => (
+                      <span
+                        key={skill.name}
+                        className={cn(
+                          "bg-secondary/40 text-foreground px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium border border-border/20 transition-all duration-300 hover:border-primary/30 hover:scale-105 hover:bg-secondary flex items-center justify-center transform",
+                          isExpanded && isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                        )}
+                        style={{ transitionDelay: `${index * 25}ms` }}
+                      >
+                        {skill.name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
