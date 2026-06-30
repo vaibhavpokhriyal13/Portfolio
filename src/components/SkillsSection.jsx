@@ -72,17 +72,16 @@ export const SkillsSection = () => {
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
 
-  const displayedSkills = activeCategory === "all" && !showAll 
-    ? filteredSkills.slice(0, 16) 
+  const displayedSkills = activeCategory === "all" && !showAll
+    ? filteredSkills.slice(0, 16)
     : filteredSkills;
 
   return (
     <section
       id="skills"
       ref={revealRef}
-      className={`py-24 px-4 relative bg-secondary/30 transition-all duration-1000 transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-      }`}
+      className={`py-24 px-4 relative bg-secondary/30 transition-all duration-1000 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+        }`}
     >
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -113,7 +112,7 @@ export const SkillsSection = () => {
             <div
               key={`${activeCategory}-${skill.name}`}
               className={cn(
-                "bg-card px-5 py-2.5 rounded-full shadow-xs border border-border/40 flex items-center justify-center transition-all duration-500 hover:border-primary/50 hover:scale-105 hover:shadow-md transform",
+                "bg-card px-5 py-2.5 rounded-full shadow-xs border border-border/40 flex items-center justify-center h-12 transition-all duration-500 hover:border-primary/50 hover:scale-105 hover:shadow-md transform",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               )}
               style={{ transitionDelay: `${index * 20}ms` }}

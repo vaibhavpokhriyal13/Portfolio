@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -49,8 +50,8 @@ export const Navbar = () => {
       <nav
         className={cn(
           "fixed w-full z-50 transition-all duration-300 transform",
-          isScrolled 
-            ? "py-3 bg-background/95 backdrop-blur-md shadow-md border-b border-border/20" 
+          isScrolled
+            ? "py-3 bg-background/95 backdrop-blur-md shadow-md border-b border-border/20"
             : "py-5 bg-transparent",
           isVisible ? "translate-y-0" : "-translate-y-full"
         )}
@@ -68,7 +69,7 @@ export const Navbar = () => {
           </a>
 
           {/* desktop nav */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, key) => (
               <a
                 key={key}
@@ -79,16 +80,20 @@ export const Navbar = () => {
                 {item.name}
               </a>
             ))}
+            <ThemeToggle />
           </div>
 
-          {/* mobile nav toggle button */}
-          <button
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="md:hidden p-2 text-foreground z-50 cursor-pointer"
-            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
-          </button>
+          {/* mobile nav controls */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              className="p-2 text-foreground z-50 cursor-pointer"
+              aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </nav>
 
