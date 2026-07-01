@@ -20,6 +20,15 @@ const projects = [
     demoUrl: "#",
     githubUrl: "https://github.com/vaibhavpokhriyal13/AI-XRay-Analyzer",
   },
+  {
+    id: 3,
+    title: "Full-Stack Task Manager",
+    description: "A premium, glassmorphic task management application built with the MERN stack. Features secure JWT authentication, dark mode UI with framer-motion animations, and responsive design.",
+    image: "/projects/project3.png",
+    tags: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS", "Framer Motion", "JWT"],
+    demoUrl: "https://task-manager-ruddy-kappa-57.vercel.app/",
+    githubUrl: "https://github.com/vaibhavpokhriyal13/Task-Manager",
+  }
 ];
 
 export const ProjectsSection = () => {
