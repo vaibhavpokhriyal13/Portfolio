@@ -4,8 +4,8 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const projects = [
   {
     id: 1,
-    title: "ShopSphere — Luxury E-Commerce & AI Concierge",
-    description: "A modern full-stack MERN luxury e-commerce platform featuring an intelligent Google Gemini AI shopping assistant, automated shipment tracking, interactive cart tools, and seamless Razorpay checkout.",
+    title: "ShopSphere — E-Commerce & AI Concierge",
+    description: "A modern full-stack MERN e-commerce platform featuring an intelligent Google Gemini AI shopping assistant, automated shipment tracking, interactive cart tools, and seamless Razorpay checkout.",
     image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Google Gemini AI", "Razorpay", "Redux Toolkit", "Vite"],
     demoUrl: "https://frontend-liart-eight-37.vercel.app/",
