@@ -13,7 +13,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Gen-AI Job Prep Platform",
+    title: "PrepAI — Gen-AI Job Prep Platform",
     description: "An AI-powered career preparation platform designed to help job seekers prepare for placements. Features mock interviews, ATS resume generation, feedback analysis, and user dashboards.",
     image: "/projects/project1.png",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Google Gemini API", "JWT", "Tailwind CSS"],
