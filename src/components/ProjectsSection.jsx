@@ -1,9 +1,18 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+﻿import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const projects = [
   {
     id: 1,
+    title: "ShopSphere — Luxury E-Commerce & AI Concierge",
+    description: "A modern full-stack MERN luxury e-commerce platform featuring an intelligent Google Gemini AI shopping assistant, automated shipment tracking, interactive cart tools, and seamless Razorpay checkout.",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Google Gemini AI", "Razorpay", "Redux Toolkit", "Vite"],
+    demoUrl: "https://frontend-liart-eight-37.vercel.app/",
+    githubUrl: "https://github.com/vaibhavpokhriyal13/ShopSphere",
+  },
+  {
+    id: 2,
     title: "Gen-AI Job Prep Platform",
     description: "An AI-powered career preparation platform designed to help job seekers prepare for placements. Features mock interviews, ATS resume generation, feedback analysis, and user dashboards.",
     image: "/projects/project1.png",
@@ -12,7 +21,7 @@ const projects = [
     githubUrl: "https://github.com/vaibhavpokhriyal13/Gen-AI-Job-Preparation-Web-Application",
   },
   {
-    id: 2,
+    id: 3,
     title: "AI X-Ray Analyzer (Ongoing)",
     description: "An intelligent medical imaging application utilizing Deep Learning and Computer Vision for chest X-ray analysis. Predicts diseases with confidence scores and explainable AI insights.",
     image: "/projects/project2.png",
@@ -21,7 +30,7 @@ const projects = [
     githubUrl: "https://github.com/vaibhavpokhriyal13/AI-XRay-Analyzer",
   },
   {
-    id: 3,
+    id: 4,
     title: "Full-Stack Task Manager",
     description: "A premium, glassmorphic task management application built with the MERN stack. Features secure JWT authentication, dark mode UI with framer-motion animations, and responsive design.",
     image: "/projects/project3.png",
@@ -53,7 +62,7 @@ export const ProjectsSection = () => {
           crafted with attention to detail, performance, and user experience.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {projects.map((project, key) => (
             <div
               key={key}
