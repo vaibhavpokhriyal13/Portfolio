@@ -138,16 +138,17 @@ An AI-powered full-stack platform designed to help students prepare for technica
 
 ---
 
-## 🩻 AI X-Ray Analyzer *(Ongoing)*
+## 🩻 NeuroScan AI — Thoracic Radiograph Diagnostic Workstation
 
-A deep learning application that analyzes chest X-rays using computer vision models to assist in disease detection while providing confidence scores, explainable predictions, and medical image visualization.
+A clinical-grade deep learning chest radiograph intelligence platform. Features fine-tuned MobileNetV2 neural classification, interactive windowing, multimodal AI clinical second opinion, ICD-10 diagnostic coding, and 1-click clinical PDF report generation.
 
 ### Technologies
 
-* Python
-* TensorFlow
-* OpenCV
-* Streamlit
+* Next.js & React
+* Python & TensorFlow
+* MobileNetV2
+* Google Gemini Multimodal API
+* Vercel & Render
 
 ---
 

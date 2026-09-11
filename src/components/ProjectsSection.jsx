@@ -1,4 +1,4 @@
-﻿import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const projects = [
@@ -22,11 +22,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "AI X-Ray Analyzer (Ongoing)",
-    description: "An intelligent medical imaging application utilizing Deep Learning and Computer Vision for chest X-ray analysis. Predicts diseases with confidence scores and explainable AI insights.",
+    title: "NeuroScan AI — Thoracic Radiograph Diagnostic Workstation",
+    description: "A clinical-grade deep learning chest radiograph intelligence platform. Features fine-tuned MobileNetV2 neural classification, interactive windowing, multimodal AI clinical second opinion, ICD-10 diagnostic coding, and 1-click clinical PDF report generation.",
     image: "/projects/project2.png",
-    tags: ["Python", "TensorFlow", "MobileNetV2", "Computer Vision", "React.js", "Flask/FastAPI"],
-    demoUrl: "#",
+    tags: ["Next.js", "React.js", "Python", "TensorFlow", "MobileNetV2", "Google Gemini AI", "Vercel", "Render"],
+    demoUrl: "https://ai-xray-analyser.vercel.app/",
     githubUrl: "https://github.com/vaibhavpokhriyal13/AI-XRay-Analyzer",
   },
   {
